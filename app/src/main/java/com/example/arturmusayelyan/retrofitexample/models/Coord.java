@@ -30,4 +30,9 @@ public class Coord {
     public void setLat(Double lat) {
         this.lat = lat;
     }
+
+    @Override
+    public String toString() {
+        return "Coord{" + "lon=" + lon + ", lat=" + lat + '}';
+    }
 }

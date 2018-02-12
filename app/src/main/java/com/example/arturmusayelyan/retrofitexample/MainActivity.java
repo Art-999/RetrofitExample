@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 
 import com.example.arturmusayelyan.retrofitexample.models.Contacts;
 import com.example.arturmusayelyan.retrofitexample.models.Example;
+import com.example.arturmusayelyan.retrofitexample.models.Main;
 import com.example.arturmusayelyan.retrofitexample.models.Weather;
 
 import java.util.List;
@@ -62,7 +63,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
                 List<Weather> weatherData = response.body().getWeather();
+                Main mainData= response.body().getMain();
+                Log.d("Artur",response.body().toString());
                 Log.d("Artur",weatherData.toString());
+                Log.d("Artur",mainData.getTemp().toString());
             }
 
             @Override

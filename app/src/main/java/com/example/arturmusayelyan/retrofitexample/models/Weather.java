@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
 public class Weather {
     @SerializedName("temp")
     @Expose
-    private Double temp;
+    private double temp;
     @SerializedName("pressure")
     @Expose
     private Integer pressure;
@@ -24,11 +24,11 @@ public class Weather {
     @Expose
     private Double tempMax;
 
-    public Double getTemp() {
+    public double getTemp() {
         return temp;
     }
 
-    public void setTemp(Double temp) {
+    public void setTemp(double temp) {
         this.temp = temp;
     }
 
@@ -64,4 +64,9 @@ public class Weather {
         this.tempMax = tempMax;
     }
 
+
+    @Override
+    public String toString() {
+        return "Weather{" + "temp=" + temp + ", pressure=" + pressure + ", humidity=" + humidity + ", tempMin=" + tempMin + ", tempMax=" + tempMax + '}';
+    }
 }
