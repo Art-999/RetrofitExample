@@ -1,6 +1,7 @@
 package com.example.arturmusayelyan.retrofitexample;
 
 import com.example.arturmusayelyan.retrofitexample.models.Contacts;
+import com.example.arturmusayelyan.retrofitexample.models.Example;
 
 import java.util.List;
 
@@ -15,4 +16,7 @@ public interface ApiInterface {
 
     @GET("?action=categories")
     Call<List<Contacts>> getContacts();
+
+    @GET("weather?id=2172797&APPID=06c0cd0ecefd895a9600f56949423d8e")
+    Call<Example> getExample();
 }
