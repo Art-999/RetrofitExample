@@ -11,7 +11,6 @@ import android.widget.ProgressBar;
 import com.example.arturmusayelyan.retrofitexample.models.Contacts;
 import com.example.arturmusayelyan.retrofitexample.models.Example;
 import com.example.arturmusayelyan.retrofitexample.models.Main;
-import com.example.arturmusayelyan.retrofitexample.models.Weather;
 
 import java.util.List;
 
@@ -62,11 +61,17 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Example>() {
             @Override
             public void onResponse(Call<Example> call, Response<Example> response) {
-                List<Weather> weatherData = response.body().getWeather();
+               // List<Weather> weatherData = response.body().getWeather();
+               // response.errorBody();
+
                 Main mainData= response.body().getMain();
                 Log.d("Artur",response.body().toString());
-                Log.d("Artur",weatherData.toString());
+                //Log.d("Artur",weatherData.toString());
+
+                Double temp=response.body().getMain().getTemp();
+                int tempInt=Integer.valueOf(temp.intValue());
                 Log.d("Artur",mainData.getTemp().toString());
+                Log.d("Artur",tempInt+"");
             }
 
             @Override
